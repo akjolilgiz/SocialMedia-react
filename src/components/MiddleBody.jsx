@@ -25,7 +25,7 @@ class MiddleBody extends React.Component {
   }
   handleNewTweet(tweet){
     var newTweet = this.state.tweets.slice(); 
-    newTweet.push(tweet); 
+    newTweet.unshift(tweet); 
     this.setState({tweets: newTweet});
   }
   render() { 
@@ -36,7 +36,7 @@ class MiddleBody extends React.Component {
     };
     return (
     <div style={divStyle}>
-    <Middle/>
+    <Middle onNewTweet={this.handleNewTweet}/>
     <hr/>
     {this.state.tweets.map((content, index) => 
         <Tweets tweet={content.tweet} 

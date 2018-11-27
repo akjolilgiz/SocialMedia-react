@@ -37,8 +37,8 @@ function Tweets(props){
         <h4>Lorem Ipsum</h4>
         <p>{props.tweet}</p>
         <p>
-        <button onClick = {props.onLikes}style={button}>Like</button>
-        {props.like}</p>
+        <button onClick = {props.onLikes}style={button}><i className="fa fa-thumbs-up"></i></button>
+         {props.like}</p>
       </div>
     </div>
   

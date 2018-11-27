@@ -1,11 +1,12 @@
 import React from "react";
 import MiddleBody from "./MiddleBody";
+import PropTypes from 'prop-types';
 
-function Middle(){
+function Middle(props){
   let _tweet = null; 
   function handleNewTweetFormSubmission(event){
       event.preventDefault();
-      console.log(_tweet.value)
+      props.onNewTweet({tweet: _tweet.value, likes: 0})
       _tweet.value = "";
   }
   let headerStyle = {
@@ -64,4 +65,7 @@ function Middle(){
     </div>
   );
 }
+Middle.propTypes = {
+  onNewTweet: PropTypes.func
+};
 export default Middle;
